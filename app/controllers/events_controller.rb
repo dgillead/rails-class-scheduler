@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
-  before_action :find_studio, only: [:new, :create, :show]
+  before_action :find_studio, only: [:new, :create, :show, :index]
   before_action :find_event, only: [:show]
+
+  def index
+    @events = Event.all
+  end
 
   def new
     @event = Event.new

@@ -1,0 +1,7 @@
+<h1>Events for studio: <%= @studio.name %></h1>
+
+<ul>
+  <% @events.each do |event| %>
+    <li><%= link_to event.title, studio_event_path(@studio, event) %></li>
+  <% end %>
+</ul>

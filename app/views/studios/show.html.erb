@@ -4,3 +4,4 @@
 <p><%= @studio.description %></p>
 
 <%= link_to 'Delete Studio', @studio, method: :delete %>
+<%= link_to 'Create Event', new_studio_event_path(@studio) %>
