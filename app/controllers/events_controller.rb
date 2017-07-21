@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  before_action :find_studio, only: [:new, :create]
+  before_action :find_studio, only: [:new, :create, :show]
+  before_action :find_event, only: [:show]
 
   def new
     @event = Event.new
@@ -13,9 +14,15 @@ class EventsController < ApplicationController
       render :new
     end
   end
-  
+
+  def show
+  end
 
   private
+
+  def find_event
+    @event = Event.find_by(id: params[:id])
+  end
 
   def find_studio
     @studio = Studio.find_by(id: params[:studio_id])
