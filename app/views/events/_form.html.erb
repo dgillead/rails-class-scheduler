@@ -1,0 +1,32 @@
+<%= form_for ([studio, event]) do |f| %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title, required: 'required' %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description, required: 'required' %>
+  </div>
+
+  <div>
+    <%= f.label :starts_at %>
+    <%= f.date_field :starts_at, required: 'required' %>
+  </div>
+
+  <div>
+    <%= f.label :ends_at %>
+    <%= f.date_field :ends_at, required: 'required' %>
+  </div>
+
+  <div>
+    <%= f.label :max_participants %>
+    <%= f.number_field :max_participants, required: 'required' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

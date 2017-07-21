@@ -2,5 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   root to: 'home#index'
 
-  resources :studios
+  resources :studios do
+    resources :events
+  end
 end
