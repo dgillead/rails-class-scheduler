@@ -1,6 +1,10 @@
 class StudiosController < ApplicationController
   before_action :find_user, only: [:create]
-  before_action :find_studio, only: [:show]
+  before_action :find_studio, only: [:show, :edit, :update]
+
+  def index
+    @studios = Studio.all
+  end
 
   def new
     @studio = Studio.new
@@ -15,11 +19,18 @@ class StudiosController < ApplicationController
     end
   end
 
-  def index
-    @studios = Studio.all
+  def show
   end
 
-  def show
+  def edit
+  end
+
+  def update
+    if @studio.update_attributes(studio_params)
+      redirect_to @studio
+    else
+      render :edit
+    end
   end
 
   private
