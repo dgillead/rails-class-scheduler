@@ -4,3 +4,5 @@
 <p>Start Date: <%= @event.starts_at %></p>
 <p>End Date: <%= @event.ends_at %></p>
 <p>Max Participants: <%= @event.max_participants %></p>
+
+<%= link_to 'Delete this event', studio_event_path(@studio, @event), method: :delete %>
