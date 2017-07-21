@@ -1,0 +1,22 @@
+<%= form_for (studio) do |f| %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: 'required' %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description, required: 'required' %>
+  </div>
+
+  <div>
+    <%= f.label :address %>
+    <%= f.text_field :address, required: 'required' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
