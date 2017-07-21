@@ -1,0 +1,7 @@
+<h1>All Studios</h1>
+
+<ul>
+<% @studios.each do |studio| %>
+  <li><%= link_to studio.name, studio %></li>
+<% end %>
+</ul>
