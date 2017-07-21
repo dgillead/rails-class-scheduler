@@ -2,3 +2,5 @@
 <p>This studio belongs to <%= current_user.first_name %>.</p>
 <p><%= @studio.address %></p>
 <p><%= @studio.description %></p>
+
+<%= link_to 'Delete Studio', @studio, method: :delete %>

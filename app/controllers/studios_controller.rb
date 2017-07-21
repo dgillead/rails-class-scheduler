@@ -1,6 +1,6 @@
 class StudiosController < ApplicationController
   before_action :find_user, only: [:create]
-  before_action :find_studio, only: [:show, :edit, :update]
+  before_action :find_studio, only: [:show, :edit, :update, :destroy]
 
   def index
     @studios = Studio.all
@@ -23,6 +23,11 @@ class StudiosController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+    @studio.destroy
+    redirect_to '/studios'
   end
 
   def update
