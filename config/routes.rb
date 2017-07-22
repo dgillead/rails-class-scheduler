@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :studios do
     resources :events
   end
+  resources :event_participants
 end

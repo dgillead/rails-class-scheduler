@@ -5,3 +5,4 @@
 
 <%= link_to 'Delete Studio', @studio, method: :delete %>
 <%= link_to 'Create Event', new_studio_event_path(@studio) %>
+<%= link_to 'See Events for this Studio', studio_events_path(@studio) %>

@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :find_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    @events = @studio.events.all
   end
 
   def new
@@ -20,6 +20,8 @@ class EventsController < ApplicationController
   end
 
   def show
+    participants = find_participants
+    render :show, locals: { participants: participants }
   end
 
   def edit
@@ -46,6 +48,12 @@ class EventsController < ApplicationController
 
   def find_studio
     @studio = Studio.find_by(id: params[:studio_id])
+  end
+
+  def find_participants
+    all_participants = EventParticipant.all
+    current_participants = all_participants.where("event_id = #{@event.id}")
+    # binding.pry
   end
 
   def event_parameters

@@ -1,0 +1,23 @@
+<h1>Sign up for an event</h1>
+
+<!-- <% events = [] %>
+<% @events.each do |event| %>
+  <% events << event %>
+<% end %> -->
+
+<%= form_for (@event_participant) do |f| %>
+  <div>
+    <%= f.label :event %>
+    <%= f.select :event_id, @events.collect { |event| [event.title, event.id] } %>
+  </div>
+
+  <div>
+    <%= f.label :course %>
+    <%= f.text_field :course %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>

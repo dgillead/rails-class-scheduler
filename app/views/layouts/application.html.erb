@@ -16,11 +16,13 @@
       <% if current_user %>
       <p>Hello, <%= current_user.first_name %>!
         <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <%= link_to 'Sign up for Event', new_event_participant_path %>
+        <%= link_to 'See all Studios', studios_path %>
         <% else %>
         <%= link_to 'Register', new_user_registration_path %>
         <%= link_to 'Login', new_user_session_path %>
         <% end %>
-      </nav>
+    </nav>
 
     <%= yield %>
   </body>
